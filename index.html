@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Avito Callback Handler</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <h1>Обработчик Avito работает</h1>
+    <p id="params"></p>
+    <script>
+        // Получаем параметры из URL после редиректа
+        const urlParams = new URLSearchParams(window.location.search);
+        let paramsHtml = '<ul>';
+        for (const [key, value] of urlParams.entries()) {
+            paramsHtml += `<li><strong>${key}:</strong> ${value}</li>`;
+        }
+        paramsHtml += '</ul>';
+        document.getElementById('params').innerHTML = paramsHtml;
+    </script>
+</body>
+</html>
